@@ -14,22 +14,26 @@ struct FullMap: View {
     
     var body: some View {
         Map() {
-            ForEach(item, id: \.id) { item in 
-                if(item.type == "Tree"){
-                    Marker(item.name, systemImage:"tree.fill", coordinate: item.coordinates)
+            ForEach(item, id: \.id) { item in
+                if(item.type == "tree.fill") {
+                    Marker(item.name, systemImage: item.type, coordinate: item.coordinates)
                         .tint(.green)
-                } else if (item.type == "Fountain") {
-                    Marker(item.name, systemImage:"drop.fill", coordinate: item.coordinates)
+                }
+                if(item.type == "drop.fill") {
+                    Marker(item.name, systemImage: item.type, coordinate: item.coordinates)
                         .tint(.blue)
-                } else if (item.type == "Souris") {
-                    Marker(item.name, systemImage:"computermouse.fill", coordinate: item.coordinates)
-                        .tint(.gray)
-                } else if (item.type == "Orange") {
-                    Marker(item.name, systemImage:"fork.knife", coordinate: item.coordinates)
-                        .tint(.orange)
-                } else if (item.type == "School") {
-                    Marker(item.name, systemImage:"graduationcap.fill", coordinate: item.coordinates)
+                }
+                if(item.type == "graduationcap.fill") {
+                    Marker(item.name, systemImage: item.type, coordinate: item.coordinates)
                         .tint(.red)
+                }
+                if(item.type == "computermouse.fill") {
+                    Marker(item.name, systemImage: item.type, coordinate: item.coordinates)
+                        .tint(.gray)
+                }
+                if(item.type == "knife.fork") {
+                    Marker(item.name, systemImage: item.type, coordinate: item.coordinates)
+                        .tint(.orange)
                 }
             }
         }

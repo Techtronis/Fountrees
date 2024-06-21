@@ -13,7 +13,7 @@ struct ContentView: View {
     var item: [DataLocations] = LocationList.LocationDetails
     
     var body: some View {
-            NavigationStack{
+            NavigationView{
                 VStack {
                     List {
                         NavigationLink(destination: FullMap(), label: {
